@@ -1,0 +1,26 @@
+@startuml h1
+	hide circle
+	skin rose
+	hide empty members
+	entity ÁreaLaboral {
+		*id : INTEGER
+		códigoInterno : CHAR
+		denominación : VARCHAR
+	}
+	entity Empleado {
+		*id : INTEGER
+		códigoEmpleado : CHAR
+		nombreCompleto : VARCHAR
+		fechaContratación : DATE
+		salario : FLOAT
+		idDepartamento : INTEGER
+	}
+	entity RegistroTiempoLaboral {
+		*id : INTEGER
+		fechaRegistro : DATETIME
+		EntradaSalida : CHAR
+		idEmpleado : INTEGER
+	}
+	ÁreaLaboral ||--o{ Empleado
+	Empleado ||--o{ RegistroTiempoLaboral
+@enduml
